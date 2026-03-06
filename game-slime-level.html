@@ -1,0 +1,42 @@
+---
+layout: page
+title: Slime Adventure - Game Level
+permalink: /rpg/slime
+codemirror: true
+---
+
+# Slime Adventure Level
+
+Play the Slime adventure game! Use **WASD** or **Arrow Keys** to move around the alien planet. Talk to the NPCs (Veldora, Milim, and Shion) by colliding with them!
+
+{% capture challenge %}
+Welcome to the Slime Adventure! You are Rimuru on an alien planet. Explore and interact with three powerful characters:
+- **Veldora**: The Storm Dragon (top-left)
+- **Milim**: The Demon Lord (top-right)  
+- **Shion**: Your Loyal Companion (bottom-left)
+
+Navigate around the central barrier and talk to all the NPCs!
+{% endcapture %}
+
+{% capture code %}
+import GameControl from '/assets/js/GameEnginev1/essentials/GameControl.js';
+import GameLevelCustom from '/assets/js/adventureGame/GameLevelSlime.js';
+
+export const gameLevelClasses = [GameLevelCustom];
+export { GameControl };
+{% endcapture %}
+
+{% include game-runner.html
+   runner_id="slime_game"
+   challenge=challenge
+   code=code
+%}
+
+## About This Level
+
+This game level features:
+- **Background**: Alien planet with nebula sky
+- **Player**: Rimuru (controllable character)
+- **NPCs**: 3 interactive characters with unique dialogues
+- **Obstacles**: Central barrier and boundary walls
+- **Interactions**: Walk up to NPCs to trigger dialogues
