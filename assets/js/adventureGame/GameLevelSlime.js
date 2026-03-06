@@ -4,11 +4,11 @@ import Npc from '/assets/js/GameEnginev1/essentials/Npc.js';
 import Barrier from '/assets/js/GameEnginev1/essentials/Barrier.js';
 
 // ============================================================
-//  GameLevelCustom — Alien Planet Level
+//  GameLevelSlime — Alien Planet Level
 //  Includes: background, player, 3 NPCs, barriers, dialogues
 // ============================================================
 
-class GameLevelCustom {
+class GameLevelSlime {
     constructor(gameEnv) {
         const path   = gameEnv.path;
         const width  = gameEnv.innerWidth;
@@ -275,4 +275,4 @@ class GameLevelCustom {
     }
 }
 
-export default GameLevelCustom;
+export default GameLevelSlime;
