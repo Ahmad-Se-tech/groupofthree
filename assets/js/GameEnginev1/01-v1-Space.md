@@ -16,7 +16,7 @@ permalink: /gamify/space
     import GameLevelSpace from "{{site.baseurl}}/assets/js/GameEnginev1/GameLevelSpace.js";
     import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api/config.js';
 
-    const gameLevelClasses = [GameLevelKirby, GameLevelSlime];
+    const gameLevelClasses = [GameLevelSpace];
 
     // Web Server Environment data
     const environment = {
