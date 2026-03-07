@@ -10,11 +10,6 @@
 // 3) Ensure images exist and paths resolve via 'path' provided by the engine.
 // 4) You can add more objects to this.classes inside the constructor.
 
-import GameEnvBackground from '/assets/js/GameEnginev1/essentials/GameEnvBackground.js';
-import Player from '/assets/js/GameEnginev1/essentials/Player.js';
-import Npc from '/assets/js/GameEnginev1/essentials/Npc.js';
-import Barrier from '/assets/js/GameEnginev1/essentials/Barrier.js';
-
 class GameLevelSpace {
     constructor(gameEnv) {
         const path = gameEnv.path;
@@ -46,7 +41,7 @@ class GameLevelSpace {
             upRight: { row: 3, start: 0, columns: 3, rotate: -Math.PI/16 },
             hitbox: { widthPercentage: 0, heightPercentage: 0 },
             keypress: { up: 87, left: 65, down: 83, right: 68 }
-            };
+        };
 
         const npcData1 = {
             id: 'ALIEN',
@@ -70,12 +65,17 @@ class GameLevelSpace {
             reaction: function() { if (this.dialogueSystem) { this.showReactionDialogue(); } else { console.log(this.greeting); } },
             interact: function() { if (this.dialogueSystem) { this.showRandomDialogue(); } }
         };
-this.classes = [      { class: GameEnvBackground, data: bgData },
-      { class: Player, data: playerData },
-      { class: Npc, data: npcData1 }
-];
 
-        
+        const GameEnvBackground = gameEnv.GameEnvBackground;
+        const Player = gameEnv.Player;
+        const Npc = gameEnv.Npc;
+        const Barrier = gameEnv.Barrier;
+
+        this.classes = [
+            { class: GameEnvBackground, data: bgData },
+            { class: Player, data: playerData },
+            { class: Npc, data: npcData1 }
+        ];
     }
 }
 
