@@ -1,14 +1,12 @@
 // Adventure Game Custom Level
 // Exported from GameBuilder on 2026-03-06T17:16:53.218Z
-// How to use this file:
-// 1) Save as assets/js/adventureGame/GameLevelSpace.js in your repo.
-// 2) Reference it in your runner or level selector. Examples:
-//    import GameLevelPlanets from '/assets/js/GameEnginev1/GameLevelPlanets.js';
-//    import GameLevelSpace from '/assets/js/adventureGame/GameLevelSpace.js';
-//    export const gameLevelClasses = [GameLevelPlanets, GameLevelSpace];
-//    // or pass it directly to your GameControl as the only level.
-// 3) Ensure images exist and paths resolve via 'path' provided by the engine.
-// 4) You can add more objects to this.classes inside the constructor.
+// Save as: assets/js/GameEnginev1/GameLevelSpace.js
+// (match the path used in your .md runner file)
+
+import GameEnvBackground from '/groupofthree/assets/js/GameEnginev1/essentials/GameEnvBackground.js';
+import Player from '/groupofthree/assets/js/GameEnginev1/essentials/Player.js';
+import Npc from '/groupofthree/assets/js/GameEnginev1/essentials/Npc.js';
+import Barrier from '/groupofthree/assets/js/GameEnginev1/essentials/Barrier.js';
 
 class GameLevelSpace {
     constructor(gameEnv) {
@@ -65,11 +63,6 @@ class GameLevelSpace {
             reaction: function() { if (this.dialogueSystem) { this.showReactionDialogue(); } else { console.log(this.greeting); } },
             interact: function() { if (this.dialogueSystem) { this.showRandomDialogue(); } }
         };
-
-        const GameEnvBackground = gameEnv.GameEnvBackground;
-        const Player = gameEnv.Player;
-        const Npc = gameEnv.Npc;
-        const Barrier = gameEnv.Barrier;
 
         this.classes = [
             { class: GameEnvBackground, data: bgData },
