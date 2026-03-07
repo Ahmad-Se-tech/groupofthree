@@ -1,7 +1,7 @@
 ---
 layout: opencs
 title: RPG Water Example 
-permalink: /gamify/kirby
+permalink: /gamify/adventure
 ---
 
 <div id="gameContainer">
