@@ -1,12 +1,10 @@
 // Adventure Game Custom Level
-// Exported from GameBuilder on 2026-03-06T17:16:53.218Z
 // Save as: assets/js/GameEnginev1/GameLevelSpace.js
-// (match the path used in your .md runner file)
 
-import GameEnvBackground from '/groupofthree/assets/js/GameEnginev1/essentials/GameEnvBackground.js';
-import Player from '/groupofthree/assets/js/GameEnginev1/essentials/Player.js';
-import Npc from '/groupofthree/assets/js/GameEnginev1/essentials/Npc.js';
-import Barrier from '/groupofthree/assets/js/GameEnginev1/essentials/Barrier.js';
+import GameEnvBackground from './essentials/GameEnvBackground.js';
+import Player from './essentials/Player.js';
+import Npc from './essentials/Npc.js';
+import Barrier from './essentials/Barrier.js';
 
 class GameLevelSpace {
     constructor(gameEnv) {
@@ -59,15 +57,73 @@ class GameLevelSpace {
             upLeft: { row: Math.min(2, 4 - 1), start: 0, columns: 3 },
             downLeft: { row: 0, start: 0, columns: 3 },
             hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
-            dialogues: ['WHO ARE YOU'],
+            dialogues: ['WHO ARE YOU', 'THIS IS MY PLANET', 'LEAVE NOW'],
             reaction: function() { if (this.dialogueSystem) { this.showReactionDialogue(); } else { console.log(this.greeting); } },
             interact: function() { if (this.dialogueSystem) { this.showRandomDialogue(); } }
+        };
+
+        // --- Barriers: space rocks / craters blocking the player's path ---
+
+        // Large crater ledge top-center
+        const dbarrier_1 = {
+            id: 'dbarrier_1', x: 300, y: 180, width: 220, height: 30, visible: false,
+            hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 },
+            fromOverlay: true
+        };
+
+        // Crater wall left side
+        const dbarrier_2 = {
+            id: 'dbarrier_2', x: 300, y: 180, width: 30, height: 120, visible: false,
+            hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 },
+            fromOverlay: true
+        };
+
+        // Crater wall right side
+        const dbarrier_3 = {
+            id: 'dbarrier_3', x: 490, y: 180, width: 30, height: 120, visible: false,
+            hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 },
+            fromOverlay: true
+        };
+
+        // Space rock cluster left of screen
+        const dbarrier_4 = {
+            id: 'dbarrier_4', x: 0, y: 300, width: 120, height: 80, visible: false,
+            hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 },
+            fromOverlay: true
+        };
+
+        // Space rock cluster right of screen
+        const dbarrier_5 = {
+            id: 'dbarrier_5', x: 780, y: 250, width: 100, height: 110, visible: false,
+            hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 },
+            fromOverlay: true
+        };
+
+        // Small boulder near NPC — forces player to navigate around
+        const dbarrier_6 = {
+            id: 'dbarrier_6', x: 440, y: 290, width: 60, height: 20, visible: false,
+            hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 },
+            fromOverlay: true
+        };
+
+        // Top wall — prevents player from leaving the screen
+        const dbarrier_7 = {
+            id: 'dbarrier_7', x: 0, y: 0, width: 1134, height: 20, visible: false,
+            hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 },
+            fromOverlay: true
         };
 
         this.classes = [
             { class: GameEnvBackground, data: bgData },
             { class: Player, data: playerData },
-            { class: Npc, data: npcData1 }
+            { class: Npc, data: npcData1 },
+            { class: Barrier, data: dbarrier_1 },
+            { class: Barrier, data: dbarrier_2 },
+            { class: Barrier, data: dbarrier_3 },
+            { class: Barrier, data: dbarrier_4 },
+            { class: Barrier, data: dbarrier_5 },
+            { class: Barrier, data: dbarrier_6 },
+            { class: Barrier, data: dbarrier_7 }
         ];
     }
 }
