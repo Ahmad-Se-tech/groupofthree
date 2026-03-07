@@ -1,14 +1,5 @@
 // Adventure Game Custom Level
-// Exported from GameBuilder on 2026-03-05T17:04:20.477Z
-// How to use this file:
-// 1) Save as assets/js/adventureGame/GameLevelKirby.js in your repo.
-// 2) Reference it in your runner or level selector. Examples:
-//    import GameLevelPlanets from '/assets/js/GameEnginev1/GameLevelPlanets.js';
-//    import GameLevelKirby from '/assets/js/adventureGame/GameLevelKirby.js';
-//    export const gameLevelClasses = [GameLevelPlanets, GameLevelKirby];
-//    // or pass it directly to your GameControl as the only level.
-// 3) Ensure images exist and paths resolve via 'path' provided by the engine.
-// 4) You can add more objects to this.classes inside the constructor.
+// Save as: assets/js/GameEnginev1/GameLevelKirby.js
 
 import GameEnvBackground from './essentials/GameEnvBackground.js';
 import Player from './essentials/Player.js';
