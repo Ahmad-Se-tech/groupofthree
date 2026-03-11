@@ -5,7 +5,7 @@ hide: true
 show_reading_time: false
 ---
 
-Hi! Our names are Ahmad Fin and ...
+Hi! Our names are Ahmad, Fin, and Aarav
 
 ### Development Environment
 
