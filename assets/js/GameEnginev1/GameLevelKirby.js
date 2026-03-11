@@ -61,58 +61,11 @@ class GameLevelKirby {
             reaction: function() { if (this.dialogueSystem) { this.showReactionDialogue(); } else { console.log(this.greeting); } },
             interact: function() { if (this.dialogueSystem) { this.showRandomDialogue(); } }
         };
-
-        const dbarrier_1 = {
-            id: 'dbarrier_1', x: 254, y: 252, width: 280, height: 33, visible: false,
-            hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 },
-            fromOverlay: true
-        };
-
-        const dbarrier_2 = {
-            id: 'dbarrier_2', x: 316, y: 289, width: 163, height: 124, visible: false,
-            hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 },
-            fromOverlay: true
-        };
-
-        const dbarrier_3 = {
-            id: 'dbarrier_3', x: 0, y: 245, width: 158, height: 35, visible: false,
-            hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 },
-            fromOverlay: true
-        };
-
-        const dbarrier_4 = {
-            id: 'dbarrier_4', x: 25, y: 274, width: 89, height: 75, visible: false,
-            hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 },
-            fromOverlay: true
-        };
-
-        const dbarrier_5 = {
-            id: 'dbarrier_5', x: 644, y: 244, width: 132, height: 148, visible: false,
-            hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 },
-            fromOverlay: true
-        };
-
-        const dbarrier_6 = {
-            id: 'dbarrier_6', x: 627, y: 67, width: 81, height: 14, visible: false,
-            hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 },
-            fromOverlay: true
-        };
-
-        const dbarrier_7 = {
-            id: 'dbarrier_7', x: 648, y: 81, width: 45, height: 43, visible: false,
-            hitbox: { widthPercentage: 0.0, heightPercentage: 0.0 },
-            fromOverlay: true
-        };
+        
 this.classes = [      { class: GameEnvBackground, data: bgData },
       { class: Player, data: playerData },
       { class: Npc, data: npcData1 },
-      { class: Barrier, data: dbarrier_1 },
-      { class: Barrier, data: dbarrier_2 },
-      { class: Barrier, data: dbarrier_3 },
-      { class: Barrier, data: dbarrier_4 },
-      { class: Barrier, data: dbarrier_5 },
-      { class: Barrier, data: dbarrier_6 },
-      { class: Barrier, data: dbarrier_7 }
+      
 ];
 
         
